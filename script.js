@@ -1,8 +1,13 @@
+const scrollPos = window.scrollY;
+
+// const secAttr = document.querySelector("#attraction");
+// const scrSecAttr = secAttr.offsetTop;
+
 window.addEventListener("scroll", () => {
   const header = document.querySelector("header");
   header.classList.toggle(
     "first",
-    window.scrollY > 0 && window.scrollY <= 1350
+    window.scrollY > 2 && window.scrollY <= 1350
   );
   header.classList.toggle("second", window.scrollY >= 1350);
 
@@ -23,5 +28,28 @@ window.addEventListener("scroll", () => {
     card.forEach((e) => {
       e.classList.add("to100");
     });
+  }
+
+  const plaH1 = document.querySelector("#place h1");
+  const plaIFrame = document.querySelector("#place iframe");
+  if (window.scrollY > 1500) {
+    plaH1.classList.add("to100");
+    plaIFrame.classList.add("to100");
+  }
+
+  if (scrollPos > secAttr) {
+    console.log("hyu");
+  }
+});
+
+const hamburger = document.querySelector(".hamburger");
+const nav = document.querySelector("nav ul");
+
+window.addEventListener("click", (e) => {
+  const el = e.target;
+  if (el.classList.contains("hamburger")) {
+    nav.classList.add("toggle");
+  } else if (nav.classList.contains("toggle")) {
+    nav.classList.remove("toggle");
   }
 });

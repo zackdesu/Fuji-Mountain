@@ -24,8 +24,8 @@ header {
   display: flex;
   align-items: center;
   width: 100%;
-  justify-content: space-around;
-  padding: 20px 0;
+  justify-content: space-between;
+  padding: 1.5rem 3rem;
   position: fixed;
   top: 0;
   transition: 0.2s;
@@ -170,6 +170,7 @@ h1 {
   align-items: center;
   justify-content: space-between;
   position: relative;
+  background-color: white;
 }
 
 .card > img {
@@ -261,7 +262,9 @@ footer {
     background-color: var(--bg-primary);
     color: var(--text-color);
     position: absolute;
-    right: 8.5rem;
+    max-width: 200px;
+    width: 100%;
+    right: 3.7rem;
     top: 100%;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -272,5 +275,20 @@ footer {
   nav ul li {
     padding: 0.7rem 1rem;
     margin: 0;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  .wrapper {
+    width: 2rem;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  header {
+    padding: 1.5rem 2rem;
+  }
+  nav {
+    right: 2.5rem;
   }
 }
